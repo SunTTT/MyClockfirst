@@ -1,0 +1,259 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.suntt.myclockfirst.TimeView
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </com.suntt.myclockfirst.TimeView>
+
+                <com.suntt.myclockfirst.AlarmView
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ListView
+                        android:id="@+id/alarmlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"></ListView>
+
+                    <Button
+                        android:id="@+id/alarmbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ADD Alarm" />
+                </com.suntt.myclockfirst.AlarmView>
+
+                <com.suntt.myclockfirst.TimerView
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/etHour"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                        <EditText
+                            android:id="@+id/etMin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                        <EditText
+                            android:id="@+id/etSec"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/btnGroup"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/btnStart"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="start" />
+
+                        <Button
+                            android:id="@+id/btnPause"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="pause" />
+
+                        <Button
+                            android:id="@+id/btnResume"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="resume" />
+
+                        <Button
+                            android:id="@+id/btnReset"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="reset" />
+                    </LinearLayout>
+                </com.suntt.myclockfirst.TimerView>
+
+                <com.suntt.myclockfirst.StopWatchView
+                    android:id="@+id/tab4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:id="@+id/swHour"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textAppearance="?android:textAppearanceLarge"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:id="@+id/swMin"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textAppearance="?android:textAppearanceLarge"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:id="@+id/swSec"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="."
+                            android:textAppearance="?android:textAppearanceLarge"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:id="@+id/swMSec"/>
+
+                    </LinearLayout>
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/lvStopWatch"></ListView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/btnswStart"
+                            android:text="Start"
+                            android:textAppearance="?android:textAppearanceLarge"/>
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/btnswPause"
+                            android:text="Pause"
+                            android:textAppearance="?android:textAppearanceLarge"/>
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/btnswResume"
+                            android:text="Resume"
+                            android:textAppearance="?android:textAppearanceLarge"/>
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/btnswReset"
+                            android:text="Reset"
+                            android:textAppearance="?android:textAppearanceLarge"/>
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/btnswLap"
+                            android:text="Lap"
+                            android:textAppearance="?android:textAppearanceLarge"/>
+
+                    </LinearLayout>
+
+
+
+                </com.suntt.myclockfirst.StopWatchView>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</FrameLayout>
